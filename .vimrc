@@ -30,9 +30,6 @@ set shiftwidth=4
 " :W for sudo save
 command W w !sudo tee % > /dev/null
 
-" Use system clipboard
-set clipboard^=unnamedplus
-
 try
 	colorscheme default
 catch
