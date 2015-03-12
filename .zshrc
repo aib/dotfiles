@@ -73,5 +73,7 @@ alias hlg='hl | grep'
 alias psl='ps -efH'
 alias pslg='psl | grep'
 
+alias sshu='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
+
 #startup
 fortune -a | cowsay -n -TUU
