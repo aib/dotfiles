@@ -1,5 +1,3 @@
-umask 022
-
 #history
 HISTFILE=~/.histfile
 HISTSIZE=16384
