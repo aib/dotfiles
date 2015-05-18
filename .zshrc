@@ -76,7 +76,7 @@ alias sshu='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 #Initialize a git repository
 gitinit() {
 	if [ -n "$1" ]; then mkdir -p "$1"; cd "$1"; fi
-	if git show-ref -q 2>/dev/null; [ $? -eq 128 ]; then git init .; fi
+	git init .
 	if git show-ref -q 2>/dev/null; [ $? -eq 1 ]; then
 		if [ ! -a README ]; then touch README; fi
 		git add README &&
