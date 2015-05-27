@@ -73,6 +73,12 @@ alias pslg='psl | grep'
 
 alias sshu='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 
+#mkdir + cd
+mkcd() {
+	mkdir -p -- "$1" &&
+	cd -- "$1"
+}
+
 #Initialize a git repository
 gitinit() {
 	if [ -n "$1" ]; then mkdir -p "$1"; cd "$1"; fi
