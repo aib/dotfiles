@@ -42,11 +42,10 @@ unsetopt beep
 unsetopt notify
 
 setopt extendedhistory
-#setopt appendhistory
 setopt histignoredups
 setopt histignorespace
 setopt histreduceblanks
-setopt incappendhistory
+#setopt incappendhistorytime
 setopt sharehistory
 
 #history search
