@@ -71,6 +71,7 @@ alias psl='ps -efH'
 alias pslg='psl | grep'
 
 alias sshu='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
+alias scpu='scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 
 #mkdir + cd
 mkcd() {
