@@ -1,0 +1,28 @@
+[user]
+	name = aib
+	email = aibok42@gmail.com
+[core]
+	autocrlf = false
+	safecrlf = true
+[push]
+	default = simple
+
+[color]
+	ui = auto
+[color "grep"]
+	filename = magenta
+	linenumber = green
+	function = yellow
+
+[alias]
+	co = checkout
+	pr = pull --rebase
+	pff = pull --ff-only
+	lg = log --graph --pretty=format:'%C(auto)%h%d%C(reset) %s %C(green)(%cr) %C(blue)<%an> %C(reset)' --date=relative
+	lga = log --graph --all --pretty=format:'%C(auto)%h%d%C(reset) %s %C(green)(%cr) %C(blue)<%an> %C(reset)' --date=relative
+
+[sendemail]
+	smtpencryption = tls
+	smtpserver = smtp.gmail.com
+	smtpuser = aibok42@gmail.com
+	smtpserverport = 587
