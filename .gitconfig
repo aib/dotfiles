@@ -26,3 +26,6 @@
 	smtpserver = smtp.gmail.com
 	smtpuser = aibok42@gmail.com
 	smtpserverport = 587
+
+[gui]
+	gcwarning = false
