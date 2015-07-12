@@ -69,6 +69,7 @@ alias hl='history -iDd 0'
 alias hlg='hl | grep'
 alias psl='ps -efH'
 alias pslg='psl | grep'
+alias xclip='xclip -selection clipboard'
 
 alias sshu='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 alias scpu='scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
