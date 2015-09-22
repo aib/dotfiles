@@ -27,10 +27,16 @@ set noswapfile
 set tabstop=4
 set shiftwidth=4
 
-" :W for sudo save
-command W w !sudo tee % > /dev/null
-
 try
 	colorscheme default
 catch
 endtry
+
+" User-defined commands
+
+" :W for sudo save
+command W w !sudo tee % > /dev/null
+
+" :Y and :R for yanking from shell commands
+command -nargs=+ -complete=shellcmd Y :let @" = system("<args>")
+command -nargs=+ -complete=shellcmd R :let @" = substitute(system("<args>"), "\n$", "", "")
