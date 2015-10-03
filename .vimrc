@@ -40,3 +40,10 @@ command W w !sudo tee % > /dev/null
 " :Y and :R for yanking from shell commands
 command -nargs=+ -complete=shellcmd Y :let @" = system("<args>")
 command -nargs=+ -complete=shellcmd R :let @" = substitute(system("<args>"), "\n$", "", "")
+
+" Highlights
+autocmd Syntax * syntax match genTrailingWhitespace /\s\+\%#\@!$/
+highlight genTrailingWhitespace term=standout ctermbg=darkred guibg=darkred
+
+autocmd Syntax * syntax match genSpaceBeforeTab /^ \+\ze\t/
+highlight genSpaceBeforeTab term=standout ctermbg=darkred guibg=darkred
