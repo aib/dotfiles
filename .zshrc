@@ -76,6 +76,9 @@ alias scpu='scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 
 alias diga='dig +noall +answer'
 
+alias sqws='sed -e "s/\\s\\+/ /g"' #squeeze whitespace
+alias sqwst='sed -e "s/\\s\\+/\t/g"' #squeeze whitespace to tab (for cut)
+
 #mkdir + cd
 mkcd() {
 	mkdir -p -- "$1" &&
