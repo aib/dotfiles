@@ -34,6 +34,9 @@ endtry
 
 " User-defined commands
 
+" F2 to execute current file
+nnoremap <F2> :!%:p<CR>
+
 " :W for sudo save
 command W w !sudo tee % > /dev/null
 
