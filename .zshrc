@@ -57,7 +57,7 @@ bindkey '^R' up-line-or-search
 
 #path
 typeset -U path
-path=($path ~/bin)
+path=($path ~/bin ~/.local/bin)
 
 #default option aliases
 alias ls='ls --color=auto -F'
