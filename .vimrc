@@ -32,6 +32,9 @@ try
 catch
 endtry
 
+" Set conceal for text with a replacement char
+set conceallevel=2
+
 " User-defined commands
 
 " F2 to execute current file
