@@ -32,6 +32,8 @@ try
 catch
 endtry
 
+syntax on
+
 " Set conceal for text with a replacement char
 set conceallevel=2
 
