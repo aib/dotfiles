@@ -20,7 +20,7 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER --forest -o pid,%cpu,tty,cputime,cmd'
 
 #env
-export PS1='%* %? %n@%m:%~%# '
+export PS1='%D{%H:%M:%S} %? %n@%m:%~%# '
 export EDITOR='vi'
 export VISUAL='vi'
 
