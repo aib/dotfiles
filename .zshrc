@@ -17,7 +17,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' menu select=1
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-zstyle ':completion:*:kill:*' command 'ps -u $USER --forest -o pid,%cpu,tty,cputime,cmd'
+zstyle ':completion:*:kill:*' command 'ps -u $USER --forest -o pid,%cpu,%mem,tty,bsdtime,cmd'
 
 #env
 export PS1='%D{%H:%M:%S} %? %n@%m:%~%# '
@@ -67,7 +67,7 @@ alias grep='grep --color=auto'
 alias cgrep='grep --color=always'
 alias hl='history -iDd 0'
 alias hlg='hl | grep'
-alias psl='ps -efH'
+alias psl='ps -Heo user,pid,ppid,%cpu,%mem,ni,nlwp,tty,stat,start_time,bsdtime,cmd'
 alias pslg='psl | grep'
 alias xclip='xclip -selection clipboard'
 
