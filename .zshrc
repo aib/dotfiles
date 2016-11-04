@@ -49,7 +49,7 @@ setopt histreduceblanks
 setopt sharehistory
 
 #history search
-bindkey '^R' up-line-or-search
+bindkey '^R' history-beginning-search-backward
 #bindkey '^[OA' up-line-or-search
 #bindkey '^[OB' down-line-or-search
 
