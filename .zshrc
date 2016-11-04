@@ -50,6 +50,7 @@ setopt sharehistory
 
 #history search
 bindkey '^R' history-beginning-search-backward
+bindkey '^F' history-beginning-search-forward
 #bindkey '^[OA' up-line-or-search
 #bindkey '^[OB' down-line-or-search
 
