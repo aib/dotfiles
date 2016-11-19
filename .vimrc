@@ -20,7 +20,7 @@ set incsearch
 " Show matching brackets
 set showmatch
 " ...for a brief moment
-set mat=1
+set matchtime=1
 
 set noswapfile
 
