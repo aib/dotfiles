@@ -65,6 +65,7 @@ path=($path ~/bin ~/.local/bin)
 #default option aliases
 alias ls='ls --color=auto -F'
 alias grep='grep --color=auto'
+alias xxd='xxd -g 1'
 
 #command aliases
 alias cgrep='grep --color=always'
