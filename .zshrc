@@ -25,7 +25,7 @@ export EDITOR='vi'
 export VISUAL='vi'
 
 #env options
-export LESS='-R'
+export LESS='-Ri'
 
 #zsh env
 REPORTTIME=20
