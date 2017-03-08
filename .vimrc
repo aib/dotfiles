@@ -41,6 +41,8 @@ set conceallevel=2
 
 " F2 to execute current file
 nnoremap <F2> :!%:p<CR>
+" Shift-F2 to execute "./run current_file"
+nnoremap <S-F2> :!./run %:p<CR>
 
 " :W for sudo save
 command W w !sudo tee % > /dev/null
