@@ -22,6 +22,7 @@
 	lga = log --graph --all --pretty=format:'%C(auto)%h%d%C(reset) %s %C(green)(%cd) %C(blue)<%an> %C(reset)' --date=relative
 	status-all = status --untracked-files=all --ignored
 	clean-all = clean -dx
+	ls-untracked = ls-files -o --exclude-standard
 
 [sendemail]
 	smtpencryption = tls
