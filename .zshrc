@@ -96,9 +96,7 @@ gitinit() {
 	if [ -n "$1" ]; then mkdir -p "$1"; cd "$1"; fi
 	git init .
 	if git show-ref -q 2>/dev/null; [ $? -eq 1 ]; then
-		if [ ! -a README ]; then touch README; fi
-		git add README &&
-		git commit -m "Initial commit"
+		git commit --allow-empty -m "Initial commit"
 	; fi
 }
 
