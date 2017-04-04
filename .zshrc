@@ -56,6 +56,9 @@ bindkey '^F' history-beginning-search-forward
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 
+#shift-enter same as enter
+bindkey '^[OM' accept-line
+
 . /etc/zsh_command_not_found
 
 #path
