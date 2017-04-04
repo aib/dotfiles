@@ -44,8 +44,11 @@ nnoremap <F2> :!%:p<CR>
 " Shift-F2 to execute "./run current_file"
 nnoremap <S-F2> :!./run %:p<CR>
 
-" :W for sudo save
-command W w !sudo tee % > /dev/null
+" :W as alias for :w
+command W w
+
+" :Wroot for sudo save
+command Wroot w !sudo tee % > /dev/null
 
 " :Y and :R for yanking from shell commands
 command -nargs=+ -complete=shellcmd Y :let @" = system("<args>")
