@@ -19,8 +19,12 @@ zstyle ':completion:*' menu select=1
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER --forest -o pid,%cpu,%mem,tty,bsdtime,cmd'
 
+#prompt
+export PS1C='%B%F{black}%D{%H:%M:%S}%f%b %? %B%F{red}%n%f%b@%B%F{green}%m%f%b:%B%F{blue}%~%f%b%# '
+export PS1NC='%D{%H:%M:%S} %? %n@%m:%~%# '
+export PS1=$PS1NC
+
 #env
-export PS1='%D{%H:%M:%S} %? %n@%m:%~%# '
 export EDITOR='vi'
 export VISUAL='vi'
 
