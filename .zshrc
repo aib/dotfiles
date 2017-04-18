@@ -63,8 +63,6 @@ bindkey '^E' end-of-line
 #shift-enter same as enter
 bindkey '^[OM' accept-line
 
-. /etc/zsh_command_not_found
-
 #path
 typeset -U path
 path=($path ~/bin ~/.local/bin)
@@ -106,6 +104,8 @@ gitinit() {
 		git commit --allow-empty -m "Initial commit"
 	; fi
 }
+
+[[ -r /etc/zsh_command_not_found ]] && . /etc/zsh_command_not_found
 
 #startup
 fortune -a | cowsay -n -TUU
