@@ -76,7 +76,7 @@ alias xxd='xxd -g 1'
 alias cgrep='grep --color=always'
 alias hl='history -iDd 0'
 alias hlg='hl | grep'
-alias psl='ps -Heo user,pid,ppid,%cpu,%mem,ni,nlwp,tty,stat,start_time,bsdtime,cmd'
+alias psl='ps -Heo pid,user,%cpu,%mem,pri,cls,ni,nlwp,tty,stat,start_time,bsdtime,cmd'
 alias pslg='psl | grep'
 alias xclip='xclip -selection clipboard'
 
