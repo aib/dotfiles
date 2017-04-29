@@ -27,6 +27,9 @@ set noswapfile
 set tabstop=4
 set shiftwidth=4
 
+" Enable mouse
+set mouse=a
+
 try
 	colorscheme default
 catch
