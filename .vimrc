@@ -29,6 +29,8 @@ set shiftwidth=4
 
 " Enable mouse
 set mouse=a
+" and still use Ctrl-Shift-C to copy to system clipboard
+vnoremap <C-S-c> "+y
 
 try
 	colorscheme default
