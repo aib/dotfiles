@@ -19,7 +19,9 @@
 	pr = pull --rebase
 	pff = pull --ff-only
 	lg = log --graph --pretty=format:'%C(auto)%h%d%C(reset) %s %C(green)(%cd) %C(blue)<%an> %C(reset)' --date=relative
+	lgd = log --graph --pretty=format:'%C(auto)%h%d%C(reset) %s %C(green)(%cd) %C(blue)(%ad) <%an> %C(reset)' --date=relative
 	lga = log --graph --all --pretty=format:'%C(auto)%h%d%C(reset) %s %C(green)(%cd) %C(blue)<%an> %C(reset)' --date=relative
+	lgad = log --graph --all --pretty=format:'%C(auto)%h%d%C(reset) %s %C(green)(%cd) %C(blue)(%ad) <%an> %C(reset)' --date=relative
 	status-all = status --untracked-files=all --ignored
 	clean-all = clean -dx
 	ls-untracked = ls-files -o --exclude-standard
