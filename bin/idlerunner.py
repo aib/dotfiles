@@ -1,13 +1,19 @@
 #!/usr/bin/env python3
 
 import argparse
+import datetime
+import locale
 import os
 import signal
 import subprocess
 import sys
 import time
 
+self_name = sys.argv[0]
+
 def main():
+	global self_name
+
 	parser = argparse.ArgumentParser(description="Run a program when the system is otherwise idle")
 	parser.add_argument('-i', '--idle', type=int, default=80, help="CPU idle %% to trigger running of the program (default %(default)s)")
 	parser.add_argument('-p', '--pid',  type=int, default=None, help="PID of the program to control")
@@ -15,12 +21,14 @@ def main():
 	parser.add_argument('-v', '--verbose', action='count', help="Be verbose. Duplicate for extra verbosity")
 	parser.add_argument('command', nargs=argparse.REMAINDER)
 
-	args = parser.parse_args()
-	self_name = sys.argv[0]
+	args = parser.parse_args(sys.argv[1:])
+	self_name = parser.prog
+
+	locale.setlocale(locale.LC_ALL, '')
 
 	if args.pid is None:
 		if len(args.command) == 0:
-			print("Please either specify a PID or a command to run", file=sys.stderr)
+			log("Please either specify a PID or a command to run")
 			sys.exit(1)
 
 		sub = subprocess.Popen(args.command)
@@ -40,13 +48,13 @@ def main():
 		proc_last = get_proc_cpu(pid)
 	except FileNotFoundError:
 		if verbosity >= 1:
-			print("%s: Process died, exiting" % (self_name,), file=sys.stderr)
+			log("Process died, exiting")
 		sys.exit(0)
 
 	stopped = False
 
 	if verbosity >= 2:
-		print("%s: proc  idle  total" % (self_name,), file=sys.stderr)
+		log("proc  idle  total")
 
 	while True:
 		time.sleep(sleep_time)
@@ -60,7 +68,7 @@ def main():
 			proc_last = proc
 		except FileNotFoundError:
 			if verbosity >= 1:
-				print("%s: Process died, exiting" % (self_name,), file=sys.stderr)
+				log("Process died, exiting")
 			sys.exit(0)
 
 		idle_fraction = idle_delta / (sleep_time * user_hz * cpu_count)
@@ -68,22 +76,26 @@ def main():
 		total_fraction = idle_fraction + proc_fraction
 
 		if verbosity >= 2:
-			print("%s: %.2f, %.2f, %.2f" % (self_name, proc_fraction, idle_fraction, total_fraction), file=sys.stderr)
+			log("%.2f, %.2f, %.2f", proc_fraction, idle_fraction, total_fraction)
 
 		if stopped:
 			if idle_fraction >= idle_threshold:
 				if verbosity >= 1:
-					print("%s: Idle %% (%d) above threshold, starting process"
-						% (self_name, round(idle_fraction * 100)), file=sys.stderr)
+					log("Idle %% (%d) above threshold, starting process", round(idle_fraction * 100))
 				start_proc(pid)
 				stopped = False
 		else:
 			if total_fraction < idle_threshold:
 				if verbosity >= 1:
-					print("%s: Idle + process %% (%d) below threshold, stopping process"
-						% (self_name, round(total_fraction * 100)), file=sys.stderr)
+					log("Idle + process %% (%d) below threshold, stopping process", round(total_fraction * 100))
 				stop_proc(pid)
 				stopped = True
+
+def log(fmt, *args):
+	global self_name
+	datestr = datetime.datetime.now().strftime("%c")
+	logstr = ("[%s] %s: " + fmt) % ((datestr, self_name) + args)
+	print(logstr, file=sys.stderr)
 
 def get_user_hz():
 	return os.sysconf(os.sysconf_names['SC_CLK_TCK'])
