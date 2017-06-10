@@ -2,12 +2,18 @@
 
 BINDIR="${HOME}/bin"
 
-ln -t "${HOME}" -s -r .gdbinit .gitconfig .inputrc .vim .vimrc .zshrc
+makelink() {
+	target_dir=$1
+	shift
+	ln -t "${target_dir}" -s -r "$@"
+}
+
+makelink "${HOME}" .gdbinit .gitconfig .inputrc .vim .vimrc .zshrc
 
 if [[ ! -e "${BINDIR}" ]]; then
 	mkdir "${BINDIR}"
 fi
 
 if [[ -d "${BINDIR}" ]]; then
-	ln -t "${BINDIR}" -s -r bin/*
+	makelink "${BINDIR}" bin/*
 fi
