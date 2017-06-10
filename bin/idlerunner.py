@@ -81,13 +81,13 @@ def main():
 		if stopped:
 			if idle_fraction >= idle_threshold:
 				if verbosity >= 1:
-					log("Idle %% (%d) above threshold, starting process", round(idle_fraction * 100))
+					log("Starting process as idle %% is above threshold: %d", round(idle_fraction * 100))
 				start_proc(pid)
 				stopped = False
 		else:
 			if total_fraction < idle_threshold:
 				if verbosity >= 1:
-					log("Idle + process %% (%d) below threshold, stopping process", round(total_fraction * 100))
+					log("Stopping process as idle + process %% is below threshold: %d", round(total_fraction * 100))
 				stop_proc(pid)
 				stopped = True
 
