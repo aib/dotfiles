@@ -65,3 +65,6 @@ highlight genTrailingWhitespace term=standout ctermbg=darkred guibg=darkred
 
 autocmd Syntax * syntax match genSpaceBeforeTab /^ \+\ze\t/
 highlight genSpaceBeforeTab term=standout ctermbg=darkred guibg=darkred
+
+autocmd Syntax * match genNonAscii /[^\t\x20-\x7e]/
+highlight genNonAscii term=standout ctermbg=darkblue guibg=darkblue
