@@ -89,6 +89,7 @@ alias diga='dig +noall +answer'
 alias cuts='cut -d" "'
 alias sqws='sed -e "s/\\s\\+/ /g"' #squeeze whitespace
 alias sqwst='sed -e "s/\\s\\+/\t/g"' #squeeze whitespace to tab (for cut)
+alias trim='sed -e "s/^\\s*//" -e "s/\\s*$//"'
 
 #mkdir + cd
 mkcd() {
