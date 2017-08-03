@@ -1,5 +1,12 @@
 #!/bin/bash
 
+printf "%q" "$0"
+for arg in "$@"
+do
+	printf " %q" "$arg"
+done
+printf "\n"
+
 let n=0
 printf "%d: %q\n" "$n" "$0"
 for arg in "$@"
@@ -7,10 +14,3 @@ do
 	let n=n+1
 	printf "%d: %s\n" "$n" "$arg"
 done
-
-printf "%q" "$0"
-for arg in "$@"
-do
-	printf " %q" "$arg"
-done
-printf "\n"
