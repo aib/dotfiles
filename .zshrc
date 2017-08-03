@@ -30,6 +30,7 @@ export VISUAL='vi'
 
 #env options
 export LESS='-Ri'
+export MINICOM='--color=on'
 
 #zsh env
 REPORTTIME=20
