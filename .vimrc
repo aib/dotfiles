@@ -28,16 +28,25 @@ set tabstop=4
 set shiftwidth=4
 
 " Enable mouse
-set mouse=a
+if has('mouse')
+	set mouse=a
+endif
+
 " and still use Ctrl-Shift-C to copy to system clipboard
 vnoremap <C-S-c> "+y
 
-try
-	colorscheme default
-catch
-endtry
+" Enable syntax highlighting
+if has('syntax')
+	syntax on
+endif
 
-syntax on
+" The color scheme to use
+if has('eval')
+	try
+		colorscheme default
+	catch
+	endtry
+endif
 
 " Set conceal for text with a replacement char
 set conceallevel=2
@@ -49,22 +58,26 @@ nnoremap <F2> :!%:p<CR>
 " Shift-F2 to execute "./run current_file"
 nnoremap <S-F2> :!./run %:p<CR>
 
-" :W as alias for :w
-command W w
+if has('user_commands')
+	" :W as alias for :w
+	command W w
 
-" :Wroot for sudo save
-command Wroot w !sudo tee % > /dev/null
+	" :Wroot for sudo save
+	command Wroot w !sudo tee % > /dev/null
 
-" :Y and :R for yanking from shell commands
-command -nargs=+ -complete=shellcmd Y :let @" = system("<args>")
-command -nargs=+ -complete=shellcmd R :let @" = substitute(system("<args>"), "\n$", "", "")
+	" :Y and :R for yanking from shell commands
+	command -nargs=+ -complete=shellcmd Y :let @" = system("<args>")
+	command -nargs=+ -complete=shellcmd R :let @" = substitute(system("<args>"), "\n$", "", "")
+endif
 
 " Highlights
-autocmd Syntax * syntax match genTrailingWhitespace /\s\+\%#\@!$/
-highlight genTrailingWhitespace term=standout ctermbg=darkred guibg=darkred
+if has('autocmd') && has('syntax')
+	autocmd Syntax * syntax match genTrailingWhitespace /\s\+\%#\@!$/
+	highlight genTrailingWhitespace term=standout ctermbg=darkred guibg=darkred
 
-autocmd Syntax * syntax match genSpaceBeforeTab /^ \+\ze\t/
-highlight genSpaceBeforeTab term=standout ctermbg=darkred guibg=darkred
+	autocmd Syntax * syntax match genSpaceBeforeTab /^ \+\ze\t/
+	highlight genSpaceBeforeTab term=standout ctermbg=darkred guibg=darkred
 
-autocmd Syntax * match genNonAscii /[^\t\x20-\x7e]/
-highlight genNonAscii term=standout ctermbg=darkblue guibg=darkblue
+	autocmd Syntax * match genNonAscii /[^\t\x20-\x7e]/
+	highlight genNonAscii term=standout ctermbg=darkblue guibg=darkblue
+endif
