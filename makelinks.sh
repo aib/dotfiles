@@ -8,7 +8,7 @@ makelink() {
 	ln -t "${target_dir}" -s -r "$@"
 }
 
-makelink "${HOME}" .gdbinit .gitconfig .inputrc .vim .vimrc .zshrc
+makelink "${HOME}" .gdbinit .gitconfig .inputrc .screenrc .vim .vimrc .zshrc
 
 if [[ ! -e "${BINDIR}" ]]; then
 	mkdir "${BINDIR}"
