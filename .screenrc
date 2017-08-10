@@ -1,0 +1,8 @@
+defscrollback 16384
+
+startup_message off
+
+hardstatus alwayslastline "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<"
+
+bind H hardcopy -h
+bind K eval "scrollback 0" "clear" "scrollback 16384" "echo \"Cleared screen and scrollback.\""
