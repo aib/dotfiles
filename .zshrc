@@ -85,6 +85,7 @@ alias xclip='xclip -selection clipboard'
 alias sshu='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 alias scpu='scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 alias sshfsu='sshfs -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
+alias rsyncu='rsync --rsh="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"'
 
 alias diga='dig +noall +answer'
 
