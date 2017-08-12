@@ -1,5 +1,5 @@
 defscrollback 16384
-
+msgwait 1
 startup_message off
 
 hardstatus alwayslastline "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<"
