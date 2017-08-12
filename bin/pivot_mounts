@@ -1,0 +1,104 @@
+#!/bin/bash
+
+PROCNAME="pivot_mounts"
+MTAB=/proc/mounts
+IGNORE_FS=()
+
+dry_run=false
+verbose=false
+mount_method="--bind"
+
+new_root=""
+
+print_usage() {
+	printf "Usage:\n\t%s [-d|--dry-run] [-v|--verbose] [--bind|--move] <newroot>\n\n" "$PROCNAME" >&2
+	exit 1
+}
+
+while [ ! -z "$1" ]; do
+	if [ "$1" == "-d" ] || [ "$1" == "--dry-run" ]; then
+		dry_run=true
+	elif [ "$1" == "-v" ] || [ "$1" == "--verbose" ]; then
+		verbose=true
+	elif [ "$1" == "--bind" ]; then
+		mount_method="--bind"
+	elif [ "$1" == "--move" ]; then
+		mount_method="--move"
+	else
+		if [ ! -z "$new_root" ]; then
+			print_usage
+		else
+			new_root="$1"
+		fi
+	fi
+
+	shift
+done
+
+if [ -z "$new_root" ]; then
+	print_usage
+fi
+
+process_mount() {
+	src="$1"
+	dest="$new_root""$src"
+
+	if [ "$src" == "/" ]; then
+		return
+	fi
+
+	for old_mount in "${old_mounts[@]}"; do
+		if [ "$dest" == "$old_mount" ]; then
+			printf "%s: Skipping mount \"%q\" already mounted at \"%q\"\n" "$PROCNAME" "$src" "$dest" >&2
+			return
+		fi
+	done
+
+	if [[ "$src" == "$new_root"/* ]]; then
+		printf "%s: Skipping mount \"%q\" inside target\n" "$PROCNAME" "$src" >&2
+		return
+	fi
+
+	if [ "$dry_run" = true ] || [ "$verbose" = true ]; then
+		printf 'mount %q %q %q\n' "$mount_method" "$src" "$dest"
+	fi
+
+	if [ "$dry_run" = false ]; then
+		mount "$mount_method" "$src" "$dest"
+	fi
+}
+
+ignore_mount() {
+	for ignore_fs in "${IGNORE_FS[@]}"; do
+		if [ "$fstype" == "$ignore_fs" ]; then
+			printf "%s: Ignoring mount \"%q\" with type \"%q\"\n" "$PROCNAME" "$old_mount" "$fstype" >&2
+			return 0
+		fi
+	done
+
+	return 1
+}
+
+old_mounts=()
+
+while read -r -a mline; do
+	fstype="${mline[0]}"
+	old_mount="${mline[1]}"
+
+	if ignore_mount $old_mount $fstype; then
+		continue
+	fi
+
+	# Restore special characters as per getmntent(3)
+	old_mount="${old_mount//\\040/ }"
+	old_mount="${old_mount//\\011/\t}"
+	old_mount="${old_mount//\\012/\n}"
+	old_mount="${old_mount//\\134/\\}"
+
+	old_mounts+=("$old_mount")
+done < "$MTAB"
+
+for old_mount in "${old_mounts[@]}"; do
+	process_mount "$old_mount"
+done
+
