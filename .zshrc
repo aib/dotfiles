@@ -68,6 +68,8 @@ bindkey '^[OM' accept-line
 typeset -U path
 path=($path ~/bin ~/.local/bin)
 
+[[ -r ~/.aliases ]] && . ~/.aliases
+
 [[ -r /etc/zsh_command_not_found ]] && . /etc/zsh_command_not_found
 
 #startup
