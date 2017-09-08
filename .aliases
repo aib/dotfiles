@@ -12,11 +12,12 @@ alias psl='ps -Heo pid,user,%cpu,%mem,pri,cls,ni,nlwp,tty,stat,start_time,bsdtim
 alias pslg='psl | grep'
 alias xclip='xclip -selection clipboard'
 
-alias sshu='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
-alias scpu='scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
-alias sshfsu='sshfs -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
-alias rsyncu='rsync --rsh="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"'
-alias sshu-copy-id='ssh-copy-id -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
+SSHU_OPTS='-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
+alias sshu="ssh $SSHU_OPTS"
+alias scpu="scp $SSHU_OPTS"
+alias sshfsu="sshfs $SSHU_OPTS"
+alias rsyncu="rsync --rsh=\"ssh $SSHU_OPTS\""
+alias sshu-copy-id="ssh-copy-id $SSHU_OPTS"
 
 alias diga='dig +noall +answer'
 
