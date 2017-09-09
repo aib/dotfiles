@@ -66,7 +66,7 @@ bindkey '^[OM' accept-line
 
 #path
 typeset -U path
-path=($path ~/bin ~/.local/bin)
+path=(~/bin ~/.local/bin $path)
 
 [[ -r ~/.aliases ]] && . ~/.aliases
 
