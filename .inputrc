@@ -2,7 +2,7 @@ set editing-mode vi
 
 set keymap vi-insert
 
-# mappings for Ctrl-left-arrow and Ctrl-right-arrow for word moving
+# mappings for Ctrl-left-arrow and Ctrl-right-arrow for word moving (from /etc/inputrc)
 "\e[1;5C": forward-word
 "\e[1;5D": backward-word
 "\e[5C": forward-word
@@ -10,6 +10,11 @@ set keymap vi-insert
 "\e\e[C": forward-word
 "\e\e[D": backward-word
 
+# allow the use of the Home/End keys (from /etc/inputrc)
+"\e[1~": beginning-of-line
+"\e[4~": end-of-line
+
+# Ctrl-A and Ctrl-E
 "\C-A": beginning-of-line
 "\C-E": end-of-line
 
