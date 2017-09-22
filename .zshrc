@@ -66,6 +66,7 @@ bindkey '^?' backward-delete-char
 typeset -U path
 path=(~/bin ~/.local/bin $path)
 
+[[ -r ~/.environment ]] && . ~/.environment
 [[ -r ~/.aliases ]] && . ~/.aliases
 
 [[ -r /etc/zsh_command_not_found ]] && . /etc/zsh_command_not_found
