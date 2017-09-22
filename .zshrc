@@ -36,9 +36,6 @@ export MINICOM='--color=on'
 REPORTTIME=20
 DIRSTACKSIZE=16
 
-#zsh options
-bindkey -v
-
 setopt extendedglob
 
 setopt autopushd
@@ -53,6 +50,10 @@ setopt histreduceblanks
 #setopt incappendhistorytime
 setopt sharehistory
 
+
+## Key Bindings ##
+bindkey -v #vi mode
+
 #history search
 bindkey '^R' history-beginning-search-backward
 bindkey '^F' history-beginning-search-forward
@@ -63,6 +64,7 @@ bindkey '^E' end-of-line
 
 #shift-enter same as enter
 bindkey '^[OM' accept-line
+
 
 #path
 typeset -U path
