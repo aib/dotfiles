@@ -1,8 +1,3 @@
-#history
-HISTFILE=~/.histfile
-HISTSIZE=16384
-SAVEHIST=16384
-
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/aib/.zshrc'
 
@@ -10,7 +5,7 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-#completion
+## Completion ##
 eval "$(dircolors -b)"
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
@@ -19,12 +14,10 @@ zstyle ':completion:*' menu select=1
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER --forest -o pid,%cpu,%mem,tty,bsdtime,cmd'
 
-#prompt
-export PS1C='%B%F{black}%D{%H:%M:%S}%f%b %? %B%F{red}%n%f%b@%B%F{green}%m%f%b:%B%F{blue}%~%f%b%# '
-export PS1NC='%D{%H:%M:%S} %? %n@%m:%~%# '
-export PS1=$PS1NC
+#Ubuntu command-not-found
+[[ -r /etc/zsh_command_not_found ]] && . /etc/zsh_command_not_found
 
-#zsh env
+## zsh Options ##
 REPORTTIME=20
 DIRSTACKSIZE=16
 
@@ -35,13 +28,17 @@ unsetopt autocd
 unsetopt beep
 unsetopt notify
 
+## History ##
+HISTFILE=~/.histfile
+HISTSIZE=16384
+SAVEHIST=16384
+
 setopt extendedhistory
 setopt histignoredups
 setopt histignorespace
 setopt histreduceblanks
 #setopt incappendhistorytime
 setopt sharehistory
-
 
 ## Key Bindings ##
 bindkey -v #vi mode
@@ -62,14 +59,18 @@ bindkey '^H' backward-delete-char
 bindkey '^?' backward-delete-char
 
 
+#prompt
+export PS1C='%B%F{black}%D{%H:%M:%S}%f%b %? %B%F{red}%n%f%b@%B%F{green}%m%f%b:%B%F{blue}%~%f%b%# '
+export PS1NC='%D{%H:%M:%S} %? %n@%m:%~%# '
+export PS1=$PS1NC
+
 #path
 typeset -U path
 path=(~/bin ~/.local/bin $path)
 
+## Common Files ##
 [[ -r ~/.environment ]] && . ~/.environment
 [[ -r ~/.aliases ]] && . ~/.aliases
 
-[[ -r /etc/zsh_command_not_found ]] && . /etc/zsh_command_not_found
-
-#startup
+## Startup ##
 fortune -a | cowsay -n -TUU
