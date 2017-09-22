@@ -1,7 +1,6 @@
-#env
 export EDITOR='vi'
 export VISUAL='vi'
 
-#env options
+#program options
 export LESS='-Ri'
 export MINICOM='--color=on'
