@@ -24,14 +24,6 @@ export PS1C='%B%F{black}%D{%H:%M:%S}%f%b %? %B%F{red}%n%f%b@%B%F{green}%m%f%b:%B
 export PS1NC='%D{%H:%M:%S} %? %n@%m:%~%# '
 export PS1=$PS1NC
 
-#env
-export EDITOR='vi'
-export VISUAL='vi'
-
-#env options
-export LESS='-Ri'
-export MINICOM='--color=on'
-
 #zsh env
 REPORTTIME=20
 DIRSTACKSIZE=16
