@@ -65,6 +65,10 @@ bindkey '^E' end-of-line
 #shift-enter same as enter
 bindkey '^[OM' accept-line
 
+#backspace through newlines
+bindkey '^H' backward-delete-char
+bindkey '^?' backward-delete-char
+
 
 #path
 typeset -U path
