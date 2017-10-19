@@ -40,14 +40,6 @@ if has('syntax')
 	syntax on
 endif
 
-" The color scheme to use
-if has('eval')
-	try
-		colorscheme default
-	catch
-	endtry
-endif
-
 " Set conceal for text with a replacement char
 set conceallevel=2
 
