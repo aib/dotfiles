@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<QALCULATE>
+  <category>
+    <title>Angle</title>
+    <category>
+      <title>Angular Velocity</title>
+      <unit type="alias">
+        <system>SI</system>
+        <title>Revolutions per Minute</title>
+        <names>RPM</names>
+        <base>
+          <unit>rad_p_s</unit>
+          <relation>2*pi/60</relation>
+          <exponent>1</exponent>
+        </base>
+      </unit>
+    </category>
+  </category>
+</QALCULATE>
