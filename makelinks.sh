@@ -24,6 +24,6 @@ autolink_dir() {
 	done
 }
 
-makelink "${HOME}" .aliases .bash_aliases .environment .gdbinit .gitconfig .inputrc .screenrc .vimrc .XCompose .zshrc
+autolink .aliases .bash_aliases .environment .gdbinit .gitconfig .inputrc .screenrc .vimrc .XCompose .zshrc
 
 autolink_dir bin .local .vim
