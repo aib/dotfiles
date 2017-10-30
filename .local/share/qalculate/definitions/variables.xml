@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<QALCULATE>
+  <category>
+    <title>My Variables</title>
+    <variable>
+      <names>r:tau</names>
+      <value>2 * pi</value>
+    </variable>
+  </category>
+</QALCULATE>
