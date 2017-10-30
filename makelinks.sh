@@ -1,7 +1,5 @@
 #!/bin/bash
 
-BINDIR="${HOME}/bin"
-
 makelink() {
 	target_dir=$1
 	shift
@@ -28,12 +26,4 @@ autolink_dir() {
 
 makelink "${HOME}" .aliases .bash_aliases .environment .gdbinit .gitconfig .inputrc .screenrc .vimrc .XCompose .zshrc
 
-autolink_dir .local .vim
-
-if [[ ! -e "${BINDIR}" ]]; then
-	mkdir "${BINDIR}"
-fi
-
-if [[ -d "${BINDIR}" ]]; then
-	makelink "${BINDIR}" bin/*
-fi
+autolink_dir bin .local .vim
