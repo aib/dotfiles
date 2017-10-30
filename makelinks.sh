@@ -5,7 +5,7 @@ BINDIR="${HOME}/bin"
 makelink() {
 	target_dir=$1
 	shift
-	ln -t "${target_dir}" -s -r "$@"
+	ln -t "${target_dir}" -s -r -v "$@"
 }
 
 autolink() {
