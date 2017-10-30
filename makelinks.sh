@@ -28,7 +28,7 @@ autolink_dir() {
 
 makelink "${HOME}" .aliases .bash_aliases .environment .gdbinit .gitconfig .inputrc .screenrc .vim .vimrc .XCompose .zshrc
 
-autolink .local/share/qalculate/definitions/variables.xml
+autolink_dir .local
 
 if [[ ! -e "${BINDIR}" ]]; then
 	mkdir "${BINDIR}"
