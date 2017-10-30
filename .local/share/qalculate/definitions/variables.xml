@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 <QALCULATE>
   <category>
-    <title>My Variables</title>
+    <title>Basic Constants</title>
     <variable>
+      <title>Circle Constant (tau)</title>
       <names>r:tau</names>
-      <value>2 * pi</value>
+      <value>2&#x3C0;</value>
     </variable>
   </category>
 </QALCULATE>
