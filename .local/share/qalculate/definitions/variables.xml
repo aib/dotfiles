@@ -4,7 +4,7 @@
     <title>Basic Constants</title>
     <variable>
       <title>Circle Constant (tau)</title>
-      <names>r:tau</names>
+      <names>au:&#x3C4;,r:tau</names>
       <value>2&#x3C0;</value>
     </variable>
   </category>
