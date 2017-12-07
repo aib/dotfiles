@@ -62,7 +62,7 @@ bindkey '^?' backward-delete-char
 #prompt
 export PS1C='%B%F{black}%D{%H:%M:%S}%f%b %? %B%F{red}%n%f%b@%B%F{green}%m%f%b:%B%F{blue}%~%f%b%# '
 export PS1NC='%D{%H:%M:%S} %? %n@%m:%~%# '
-export PS1=$PS1NC
+export PS1=$PS1C
 
 #path
 typeset -U path
@@ -73,4 +73,4 @@ path=(~/bin ~/.local/bin $path)
 [[ -r ~/.aliases ]] && . ~/.aliases
 
 ## Startup ##
-fortune -a | cowsay -n -TUU
+#fortune -a | cowsay -n -TUU
