@@ -6,6 +6,7 @@
 	safecrlf = true
 [push]
 	default = simple
+	followTags = true
 
 [color]
 	ui = auto
