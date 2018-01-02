@@ -64,12 +64,12 @@ endif
 
 " Highlights
 if has('autocmd') && has('syntax')
-	autocmd Syntax * syntax match genTrailingWhitespace /\s\+\%#\@!$/
+	autocmd Syntax * syntax match genTrailingWhitespace /\s\+\%#\@!$/ containedin=ALL
 	highlight genTrailingWhitespace term=standout ctermbg=darkred guibg=darkred
 
-	autocmd Syntax * syntax match genSpaceBeforeTab /^ \+\ze\t/
+	autocmd Syntax * syntax match genSpaceBeforeTab /^ \+\ze\t/ containedin=ALL
 	highlight genSpaceBeforeTab term=standout ctermbg=darkred guibg=darkred
 
-	autocmd Syntax * match genNonAscii /[^\t\x20-\x7e]/
+	autocmd Syntax * syntax match genNonAscii /[^\t\x20-\x7e]/ containedin=ALL
 	highlight genNonAscii term=standout ctermbg=darkblue guibg=darkblue
 endif
