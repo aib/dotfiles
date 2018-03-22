@@ -40,3 +40,7 @@ gitinit() {
 		git commit --allow-empty -m "Initial commit";
 	fi
 }
+
+ipof() {
+	dig +noall +answer "$@" | sed -e 's/\s\+/\t/g' | cut -f 5
+}
