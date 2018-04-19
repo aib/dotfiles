@@ -32,8 +32,9 @@ if has('mouse')
 	set mouse=a
 endif
 
-" and still use Ctrl-Shift-C to copy to system clipboard
-vnoremap <C-S-c> "+y
+" Use the X (middle-click) clipboard ("*) as the default register
+" I do not use the system clipboard ("+) because I keep its history and vim tends to change it a lot
+set clipboard=unnamed
 
 " Enable syntax highlighting
 if has('syntax')
