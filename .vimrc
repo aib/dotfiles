@@ -27,6 +27,9 @@ set noswapfile
 set tabstop=4
 set shiftwidth=4
 
+set autoindent
+set smartindent
+
 " Enable mouse
 if has('mouse')
 	set mouse=a
