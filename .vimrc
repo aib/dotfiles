@@ -39,6 +39,9 @@ endif
 " I do not use the system clipboard ("+) because I keep its history and vim tends to change it a lot
 set clipboard=unnamed
 
+" Ctrl-C for copy is useful when you're in the GUI mindset and using vim as a scratch pad
+vnoremap <C-c> "+y
+
 " Enable syntax highlighting
 if has('syntax')
 	syntax on
