@@ -50,6 +50,7 @@ bindkey '^F' history-beginning-search-forward
 #emacs bindings
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
+bindkey '^Xa' _expand_alias
 
 #shift-enter same as enter
 bindkey '^[OM' accept-line
