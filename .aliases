@@ -42,5 +42,5 @@ gitinit() {
 }
 
 ipof() {
-	dig +noall +answer "$@" | sed -e 's/\s\+/\t/g' | cut -f 5
+	getent hosts "$@" | cut -d' ' -f1
 }
