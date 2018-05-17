@@ -29,6 +29,7 @@ set shiftwidth=4
 
 set autoindent
 set smartindent
+set copyindent
 
 " Enable mouse
 if has('mouse')
