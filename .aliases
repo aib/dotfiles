@@ -15,6 +15,7 @@ alias xclip='xclip -selection clipboard'
 SSHU_OPTS='-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 alias sshu="ssh $SSHU_OPTS"
 alias scpu="scp $SSHU_OPTS"
+alias sftpu="sftp $SSHU_OPTS"
 alias sshfsu="sshfs $SSHU_OPTS"
 alias rsyncu="rsync --rsh=\"ssh $SSHU_OPTS\""
 alias sshu-copy-id="ssh-copy-id $SSHU_OPTS"
