@@ -53,10 +53,10 @@ set conceallevel=2
 
 " User-defined commands
 
-" F2 to execute current file
-nnoremap <F2> :!%:p<CR>
-" Shift-F2 to execute "./run current_file"
-nnoremap <S-F2> :!./run %:p<CR>
+" F2 to execute makeprg
+nnoremap <F2> :make<CR>
+" Shift-F2 to execute the current file
+nnoremap <S-F2> :!%:p<CR>
 
 if has('user_commands')
 	" :W as alias for :w
