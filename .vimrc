@@ -9,6 +9,8 @@ set wildmenu
 
 " Scroll when _near_ the top/bottom line
 set scrolloff=4
+" and near the left/right side
+set sidescrolloff=8
 
 " Do case insensitive searches
 set ignorecase
