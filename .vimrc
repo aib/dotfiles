@@ -81,3 +81,8 @@ if has('autocmd') && has('syntax')
 	autocmd VimEnter,BufNewFile,BufReadPost * syntax match genNonAscii /[^\t\x20-\x7e]/ containedin=ALL
 	highlight genNonAscii term=standout ctermbg=darkblue guibg=darkblue
 endif
+
+" vim-plugged
+silent! if plug#begin('~/.vim/plugged')
+	call plug#end()
+endif
