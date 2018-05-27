@@ -84,5 +84,7 @@ endif
 
 " vim-plugged
 silent! if plug#begin('~/.vim/plugged')
+	Plug 'tpope/vim-sleuth'
+
 	call plug#end()
 endif
