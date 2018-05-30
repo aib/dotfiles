@@ -8,6 +8,9 @@
 	default = simple
 	followTags = true
 
+[diff]
+	wsErrorHighlight = old,new
+
 [color]
 	ui = auto
 [color "grep"]
