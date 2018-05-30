@@ -33,6 +33,9 @@ set autoindent
 set smartindent
 set copyindent
 
+" No octal with ^A/^X
+set nrformats-=octal
+
 " Enable mouse
 if has('mouse')
 	set mouse=a
