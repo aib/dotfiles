@@ -59,7 +59,7 @@ set conceallevel=2
 " User-defined commands
 
 " F2 to execute makeprg
-nnoremap <F2> :make<CR>
+nnoremap <F2> :make!<CR>
 " Shift-F2 to execute the current file
 nnoremap <S-F2> :!%:p<CR>
 
