@@ -95,4 +95,4 @@ silent! if plug#begin('~/.vim/plugged')
 endif
 
 " Default plugin settings
-let g:python_recommended_style = 0
+silent! let g:python_recommended_style = 0
