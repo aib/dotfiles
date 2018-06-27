@@ -17,5 +17,6 @@ if [ ! -r "$carrier_file" ] || [ $(<"$carrier_file") -ne "1" ]; then
 	done
 fi
 
+nmcli device disconnect "$LANIF"
 ip address add 192.168.42.1/24 dev "$LANIF"
 dnsmasq -d -p 0 -F 192.168.42.2,192.168.42.2,4h -O 3,192.168.42.1 -O 6,"$DNSSERV" --dhcp-leasefile=/dev/null
