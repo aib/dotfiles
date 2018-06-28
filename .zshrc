@@ -47,10 +47,14 @@ bindkey -v #vi mode
 bindkey '^R' history-beginning-search-backward
 bindkey '^F' history-beginning-search-forward
 
-#emacs bindings
+#bash/emacs bindings
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 bindkey '^Xa' _expand_alias
+
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^X^E' edit-command-line
 
 #shift-enter same as enter
 bindkey '^[OM' accept-line
