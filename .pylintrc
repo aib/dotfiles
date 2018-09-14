@@ -1,0 +1,15 @@
+[MASTER]
+persistent=no
+
+[REPORTS]
+score=no
+
+[MESSAGES CONTROL]
+disable=
+	C,
+	R,
+	mixed-indentation, # This is not actual mixed indentation
+	broad-except,
+	redefined-outer-name,
+	redefine-in-handler,
+	unsubscriptable-object,
