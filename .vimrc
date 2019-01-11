@@ -95,4 +95,5 @@ silent! if plug#begin('~/.vim/plugged')
 endif
 
 " Default plugin settings
+silent! let g:netrw_dirhistmax = 0
 silent! let g:python_recommended_style = 0
