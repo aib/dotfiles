@@ -30,6 +30,11 @@ alias trim='sed -e "s/^\\s*//" -e "s/\\s*$//"'
 
 alias numdate='date "+%Y%m%d%H%M%S"'
 
+#Set terminal window title
+xtitle() {
+	echo -en "\e]0;$@\a"
+}
+
 #mkdir + cd
 mkcd() {
 	mkdir -p -- "$1" &&
