@@ -68,8 +68,6 @@ bindkey '^?' backward-delete-char
 export PS1C='%B%F{black}%D{%H:%M:%S}%f%b %? %B%F{red}%n%f%b@%B%F{green}%m%f%b:%B%F{blue}%~%f%b%# '
 export PS1NC='%D{%H:%M:%S} %? %n@%m:%~%# '
 export PS1=$PS1C
-set_window_title() { xtitle "$USER@$HOST" }
-precmd_functions+=(set_window_title)
 
 #path
 typeset -U path
@@ -80,4 +78,5 @@ path=(~/bin ~/.local/bin $path)
 [[ -r ~/.aliases ]] && . ~/.aliases
 
 ## Startup ##
+xtitle "$USER@$HOST"
 #fortune -a | cowsay -n -TUU
