@@ -35,6 +35,10 @@ xtitle() {
 	echo -en "\e]0;$@\a"
 }
 
+#Push/pop terminal window title
+xtitle_push() { echo -en "\e[22;0t" }
+xtitle_pop()  { echo -en "\e[23;0t" }
+
 #mkdir + cd
 mkcd() {
 	mkdir -p -- "$1" &&
