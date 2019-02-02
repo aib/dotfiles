@@ -1,9 +1,8 @@
 #Command overrides
 ssh() {
-	xtitle_push
+	xtitle_push && trap xtitle_pop EXIT
 	xtitle "SSH"
 	command ssh "$@"
-	xtitle_pop
 }
 
 #default option aliases
