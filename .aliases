@@ -1,7 +1,6 @@
 #Command overrides
 ssh() {
-	xtitle_push && trap xtitle_pop EXIT
-	xtitle "SSH"
+	[[ -t 1 ]] && xtitle_push && trap xtitle_pop EXIT && xtitle "SSH"
 	command ssh "$@"
 }
 
