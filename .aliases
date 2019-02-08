@@ -29,7 +29,7 @@ alias sshu-copy-id="ssh-copy-id $SSHU_OPTS"
 
 alias diga='dig +noall +answer'
 
-alias cuts='sqwst | cut'
+alias cuts='trim | sqwst | cut'
 alias sqws='sed -e "s/\\s\\+/ /g"' #squeeze whitespace
 alias sqwst='sed -e "s/\\s\\+/\\t/g"' #squeeze whitespace to tab
 alias trim='sed -e "s/^\\s*//" -e "s/\\s*$//"'
