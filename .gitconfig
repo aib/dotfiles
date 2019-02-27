@@ -39,4 +39,5 @@
 	smtpserverport = 587
 
 [gui]
+	diffopts = --ws-error-highlight=old,new
 	gcwarning = false
