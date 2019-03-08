@@ -46,6 +46,8 @@ bindkey -v #vi mode
 #history search
 bindkey '^R' history-beginning-search-backward
 bindkey '^F' history-beginning-search-forward
+bindkey '^Xr' history-incremental-search-backward
+bindkey '^Xf' history-incremental-search-forward
 
 #bash/emacs bindings
 bindkey '^A' beginning-of-line
