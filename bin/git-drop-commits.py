@@ -25,7 +25,8 @@ for line in fileinput.input('-'):
 		print(line)
 		continue
 
-	(action, chash, message) = line.split(maxsplit=2)
+	(action, chash, *opt_message) = line.split(maxsplit=2)
+	message = opt_message[0] if len(opt_message) == 1 else ""
 
 	if any(map(lambda h: h.startswith(chash), clist)):
 		print('# ', line, sep='')
