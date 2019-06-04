@@ -35,7 +35,6 @@ for line in fileinput.input('-'):
 	message = opt_message[0] if len(opt_message) == 1 else ""
 
 	if any(map(lambda h: h.startswith(chash), clist)) ^ negate:
-		print('# ', line, sep='')
 		print('drop', chash, message, '#', MYNAME)
 	else:
 		print(line)
