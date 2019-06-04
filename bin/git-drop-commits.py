@@ -9,6 +9,12 @@ MYNAME = 'git-drop-commits.py'
 
 locale.setlocale(locale.LC_ALL, '')
 
+if '-n' in sys.argv:
+	sys.argv.remove('-n')
+	negate = True
+else:
+	negate = False
+
 if len(sys.argv) != 2:
 	print("Must specify commit hash list file as argument", file=sys.stderr)
 	sys.exit(1)
@@ -28,7 +34,7 @@ for line in fileinput.input('-'):
 	(action, chash, *opt_message) = line.split(maxsplit=2)
 	message = opt_message[0] if len(opt_message) == 1 else ""
 
-	if any(map(lambda h: h.startswith(chash), clist)):
+	if any(map(lambda h: h.startswith(chash), clist)) ^ negate:
 		print('# ', line, sep='')
 		print('drop', chash, message, '#', MYNAME)
 	else:
