@@ -43,6 +43,9 @@ setopt sharehistory
 ## Key Bindings ##
 bindkey -v #vi mode
 
+bindkey "^[k" up-line-or-history
+bindkey "^[j" down-line-or-history
+
 #history search
 bindkey '^R' history-beginning-search-backward
 bindkey '^F' history-beginning-search-forward
