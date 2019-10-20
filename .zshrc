@@ -47,6 +47,8 @@ bindkey '^[' vi-cmd-mode
 bindkey '^[k' up-line-or-history
 bindkey '^[j' down-line-or-history
 
+bindkey '^P' push-input
+
 # Better history search
 bindkey '^R' history-beginning-search-backward
 bindkey '^F' history-beginning-search-forward
