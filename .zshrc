@@ -22,6 +22,7 @@ REPORTTIME=20
 DIRSTACKSIZE=16
 
 setopt extendedglob
+setopt interactivecomments
 
 setopt autopushd
 unsetopt autocd
