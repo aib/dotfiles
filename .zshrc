@@ -41,32 +41,25 @@ setopt histreduceblanks
 setopt sharehistory
 
 ## Key Bindings ##
-bindkey -v #vi mode
+bindkey -e # emacs mode
+bindkey '^[' vi-cmd-mode
 
-bindkey "^[k" up-line-or-history
-bindkey "^[j" down-line-or-history
+bindkey '^[k' up-line-or-history
+bindkey '^[j' down-line-or-history
 
-#history search
+# Better history search
 bindkey '^R' history-beginning-search-backward
 bindkey '^F' history-beginning-search-forward
 bindkey '^Xr' history-incremental-search-backward
 bindkey '^Xf' history-incremental-search-forward
 
-#bash/emacs bindings
-bindkey '^A' beginning-of-line
-bindkey '^E' end-of-line
-bindkey '^Xa' _expand_alias
-
-autoload edit-command-line
+# Edit with editor
+autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '^X^E' edit-command-line
 
-#shift-enter same as enter
+# Shift-enter same as enter
 bindkey '^[OM' accept-line
-
-#backspace through newlines
-bindkey '^H' backward-delete-char
-bindkey '^?' backward-delete-char
 
 
 #prompt
