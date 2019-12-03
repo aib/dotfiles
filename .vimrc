@@ -93,6 +93,7 @@ endif
 silent! if plug#begin('~/.vim/plugged')
 	Plug 'mbbill/undotree'
 	Plug 'tpope/vim-sleuth'
+	Plug 'tpope/vim-unimpaired'
 
 	call plug#end()
 endif
