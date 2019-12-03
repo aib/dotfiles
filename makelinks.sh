@@ -26,4 +26,4 @@ autolink_dir() {
 
 autolink .aliases .bash_aliases .environment .gdbinit .gitconfig .inputrc .pylintrc .screenrc .vimrc .XCompose .zshrc
 
-autolink_dir bin .config .local .ssh .vim
+autolink_dir bin .config .local .q3a .ssh .vim
