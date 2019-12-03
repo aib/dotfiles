@@ -78,6 +78,9 @@ path=(~/bin ~/.local/bin $path)
 [[ -r ~/.environment ]] && . ~/.environment
 [[ -r ~/.aliases ]] && . ~/.aliases
 
+## Allow SSH_AUTH_SOCK override, useful when ssh-agent dies
+[[ -e ~/.ssh/auth.sock ]] && export SSH_AUTH_SOCK=~/.ssh/auth.sock
+
 ## Startup ##
 xtitle "$USER@$HOST"
 #fortune -a | cowsay -n -TUU
