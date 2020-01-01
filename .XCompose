@@ -5,5 +5,8 @@ include "%L"
 
 <Multi_key> <A> <A>	: "∀"   U2200 # FOR ALL
 <Multi_key> <E> <E>	: "∃"   U2203 # THERE EXISTS
+<Multi_key> <asciicircum> <asciicircum>	: "∧"   U2227 # LOGICAL AND
+<Multi_key> <V> <V>	: "∨"   U2228 # LOGICAL OR
+<Multi_key> <asciitilde> <exclam>	: "¬"   U00AC # NOT SIGN
 
 <Multi_key> <0> <space>	: "​"   U200B # ZERO WIDTH SPACE
