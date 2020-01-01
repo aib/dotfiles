@@ -9,4 +9,6 @@ include "%L"
 <Multi_key> <V> <V>	: "∨"   U2228 # LOGICAL OR
 <Multi_key> <asciitilde> <exclam>	: "¬"   U00AC # NOT SIGN
 
+<Multi_key> <greater> <less>	: "↔"   U2194 # LEFT RIGHT ARROW
+
 <Multi_key> <0> <space>	: "​"   U200B # ZERO WIDTH SPACE
