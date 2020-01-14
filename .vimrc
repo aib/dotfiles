@@ -79,13 +79,13 @@ endif
 
 " Highlights
 if has('autocmd') && has('syntax')
-	autocmd VimEnter,BufNewFile,BufReadPost * syntax match genTrailingWhitespace /\s\+\%#\@!$/ containedin=ALL
+	autocmd BufEnter * syntax match genTrailingWhitespace /\s\+\%#\@!$/ containedin=ALL
 	highlight genTrailingWhitespace term=standout ctermbg=darkred guibg=darkred
 
-	autocmd VimEnter,BufNewFile,BufReadPost * syntax match genSpaceBeforeTab /^ \+\ze\t/ containedin=ALL
+	autocmd BufEnter * syntax match genSpaceBeforeTab /^ \+\ze\t/ containedin=ALL
 	highlight genSpaceBeforeTab term=standout ctermbg=darkred guibg=darkred
 
-	autocmd VimEnter,BufNewFile,BufReadPost * syntax match genNonAscii /[^\t\x20-\x7e]/ containedin=ALL
+	autocmd BufEnter * syntax match genNonAscii /[^\t\x20-\x7e]/ containedin=ALL
 	highlight genNonAscii term=standout ctermbg=darkblue guibg=darkblue
 endif
 
