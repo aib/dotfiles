@@ -30,6 +30,7 @@ alias sftpu="sftp $SSHU_OPTS"
 alias sshfsu="sshfs $SSHU_OPTS"
 alias rsyncu="rsync --rsh=\"ssh $SSHU_OPTS\""
 alias sshu-copy-id="ssh-copy-id $SSHU_OPTS"
+alias gitu='GIT_SSH_COMMAND="ssh $SSHU_OPTS" git'
 
 alias diga='dig +noall +answer'
 
