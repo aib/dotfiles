@@ -41,3 +41,9 @@
 [gui]
 	diffopts = --ws-error-highlight=old,new
 	gcwarning = false
+
+[guitool "rm"]
+	cmd = rm -f -- \"$FILENAME\"
+	noconsole = yes
+	needsfile = yes
+	confirm = yes
