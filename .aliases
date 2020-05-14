@@ -73,3 +73,10 @@ gitinit() {
 ipof() {
 	getent hosts "$@" | cut -d' ' -f1
 }
+
+findext() {
+	find . -name "*.$1"
+}
+findfile() {
+	find . -iname "*$1*"
+}
