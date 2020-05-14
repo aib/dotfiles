@@ -19,7 +19,7 @@ alias sddd='sudo dd bs=4M oflag=direct status=progress'
 alias hl='history -iDd 0'
 alias hlg='hl | grep'
 alias nsa='netstat -pan46'
-alias psl='ps -Heo pid,user,%cpu,%mem,pri,cls,ni,nlwp,tty,stat,start_time,bsdtime,cmd'
+alias psl='ps -Heo pid,pgrp,user,%cpu,%mem,pri,cls,ni,nlwp,tty,stat,start_time,bsdtime,cmd'
 alias pslg='psl | grep'
 alias xclip='xclip -selection clipboard'
 
