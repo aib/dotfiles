@@ -3,6 +3,9 @@ include "%L"
 <Multi_key> <asciicircum> <underscore>	: "Δ"   U0394 # GREEK CAPITAL LETTER DELTA
 <Multi_key> <backslash> <l>	: "λ"   U03BB # GREEK SMALL LETTER LAMDA
 
+<Multi_key> <plus> <bar>	: "†"   U2020 # DAGGER
+<Multi_key> <plus> <underscore>	: "‡"   U2021 # DOUBLE DAGGER
+
 <Multi_key> <A> <A>	: "∀"   U2200 # FOR ALL
 <Multi_key> <E> <E>	: "∃"   U2203 # THERE EXISTS
 <Multi_key> <asciicircum> <asciicircum>	: "∧"   U2227 # LOGICAL AND
