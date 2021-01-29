@@ -80,3 +80,10 @@ findext() {
 findfile() {
 	find . -iname "*$1*"
 }
+
+# Create/activate virtualenv
+venv() {
+	local venv_dir="${1-./venv}"
+	[ -e "$venv_dir" ] || virtualenv "$venv_dir"
+	. "$venv_dir"/bin/activate
+}
