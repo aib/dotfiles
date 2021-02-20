@@ -30,7 +30,6 @@ while [ "$#" -gt 0 ]; do
 			mount_method="--move"
 			;;
 		*)
-			printf "new root: ${new_root+x} 1: ${1} is $(if [ -z "$new_root" ]; then 1; else 0; fi)\n"
 			if [ -n "$new_root" ]; then
 				print_usage
 			else
