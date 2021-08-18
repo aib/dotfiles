@@ -7,6 +7,8 @@
 [push]
 	default = simple
 	followTags = true
+[rebase]
+	autoSquash = true
 
 [diff]
 	wsErrorHighlight = old,new
