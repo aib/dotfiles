@@ -73,8 +73,13 @@ if has('user_commands')
 	command Wroot w !sudo tee % > /dev/null
 
 	" :Y and :R for yanking from shell commands
-	command -nargs=+ -complete=shellcmd R :let @* = system("<args>")
-	command -nargs=+ -complete=shellcmd Y :let @* = substitute(system("<args>"), "\n$", "", "")
+	if has('clipboard')
+		command -nargs=+ -complete=shellcmd R :let @* = system("<args>")
+		command -nargs=+ -complete=shellcmd Y :let @* = substitute(system("<args>"), "\n$", "", "")
+	else
+		command -nargs=+ -complete=shellcmd R :let @" = system("<args>")
+		command -nargs=+ -complete=shellcmd Y :let @" = substitute(system("<args>"), "\n$", "", "")
+	endif
 endif
 
 " Highlights
