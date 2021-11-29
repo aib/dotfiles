@@ -16,4 +16,12 @@
       </unit>
     </category>
   </category>
+  <category>
+    <title>Misc</title>
+    <unit type="base">
+      <use_with_prefixes>true</use_with_prefixes>
+      <title>Generic item</title>
+      <names>r:item,p:items</names>
+    </unit>
+  </category>
 </QALCULATE>
