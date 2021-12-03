@@ -74,6 +74,10 @@ ipof() {
 	getent hosts "$@" | cut -d' ' -f1
 }
 
+showcerts() {
+	openssl s_client -showcerts -connect "$@" </dev/null
+}
+
 findext() {
 	find . -name "*.$1"
 }
