@@ -60,10 +60,11 @@ process_mount() {
 		fi
 	done
 
-	if [[ "$src" == "$new_root"/* ]]; then
+	case "$src" in "$new_root"/*)
 		printf "%s: Skipping mount \"%q\" inside target\n" "$PROCNAME" "$src" >&2
 		return
-	fi
+		;;
+	esac
 
 	if [ "$dry_run" = true ] || [ "$verbose" = true ]; then
 		printf 'mount %q %q %q\n' "$mount_method" "$src" "$dest"
