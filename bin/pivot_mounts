@@ -92,7 +92,7 @@ while read -r -a mline; do
 	fstype="${mline[0]}"
 	old_mount="${mline[1]}"
 
-	if ignore_mount $old_mount $fstype; then
+	if ignore_mount "$old_mount" "$fstype"; then
 		continue
 	fi
 
