@@ -36,6 +36,11 @@ set copyindent
 " No octal with ^A/^X
 set nrformats-=octal
 
+if has('autocmd')
+	" Do not auto-wrap comments, do not continue on next line (WTF?!)
+	autocmd BufEnter * setlocal formatoptions-=cro
+endif
+
 " Enable mouse
 if has('mouse')
 	set mouse=a
