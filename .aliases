@@ -41,6 +41,7 @@ alias trim='sed -e "s/^\\s*//" -e "s/\\s*$//"'
 
 alias tsd='date "+%Y%m%d"'
 alias tsdt='date "+%Y%m%d%H%M%S"'
+alias tsms='ts "%Y-%m-%d %H:%M:%.S"'
 
 #Set terminal window title
 xtitle() {
