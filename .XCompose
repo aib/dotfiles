@@ -13,5 +13,7 @@ include "%L"
 <Multi_key> <asciitilde> <exclam>	: "¬"   U00AC # NOT SIGN
 
 <Multi_key> <greater> <less>	: "↔"   U2194 # LEFT RIGHT ARROW
+<Multi_key> <less> <asciitilde>	: "↜"   U219C # LEFTWARDS WAVE ARROW
+<Multi_key> <asciitilde> <greater>	: "↝"   U219D # RIGHTWARDS WAVE ARROW
 
 <Multi_key> <0> <space>	: "​"   U200B # ZERO WIDTH SPACE
