@@ -104,6 +104,7 @@ endif
 " vim-plugged
 silent! if plug#begin('~/.vim/plugged')
 	Plug 'mbbill/undotree'
+	Plug 'scrooloose/nerdtree'
 	Plug 'tpope/vim-sleuth'
 	Plug 'tpope/vim-unimpaired'
 
