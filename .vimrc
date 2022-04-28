@@ -89,6 +89,10 @@ if has('user_commands')
 	command -range=% StripTS let tmp_view = winsaveview() | keeppatterns <line1>,<line2>s/\s*$// | call winrestview(tmp_view) | unlet tmp_view
 endif
 
+" Leader commands
+map <Leader>e :execute getline(".")<CR>
+"map <Leader>x :let @* = system(getline("."))<CR>
+
 " Highlights
 if has('autocmd') && has('syntax')
 	autocmd BufEnter * syntax match genTrailingWhitespace /\s\+\%#\@!$/ containedin=ALL
