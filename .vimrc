@@ -93,6 +93,11 @@ endif
 map <Leader>e :execute getline(".")<CR>
 "map <Leader>x :let @* = system(getline("."))<CR>
 
+map <silent> <Leader>h1 :call matchaddpos('Manual1', [line('.')])<CR>
+map <silent> <Leader>h2 :call matchaddpos('Manual2', [line('.')])<CR>
+map <silent> <Leader>hh :call matchaddpos('Manual1', [line('.')])<CR>
+map <silent> <Leader>hc :call clearmatches()<CR>
+
 " Highlights
 if has('autocmd') && has('syntax')
 	autocmd BufEnter * syntax match genTrailingWhitespace /\s\+\%#\@!$/ containedin=ALL
@@ -103,6 +108,9 @@ if has('autocmd') && has('syntax')
 
 	autocmd BufEnter * syntax match genNonAscii /[^\t\x20-\x7e]/ containedin=ALL
 	highlight genNonAscii term=standout ctermbg=darkblue guibg=darkblue
+
+	highlight Manual1 term=standout ctermbg=blue guibg=blue
+	highlight Manual2 term=standout ctermbg=yellow  guibg=blue
 endif
 
 " vim-plugged
