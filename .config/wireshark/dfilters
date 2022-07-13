@@ -1,0 +1,1 @@
+"USB useful URBs" !(((usb.endpoint_address.direction == OUT && usb.urb_type == URB_COMPLETE)) || (usb.endpoint_address.direction == IN && usb.urb_type == URB_SUBMIT))
