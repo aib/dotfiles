@@ -93,6 +93,9 @@ endif
 map <Leader>e :execute getline(".")<CR>
 "map <Leader>x :let @* = system(getline("."))<CR>
 
+let grep_files = '**'
+map <leader>gw :execute 'vimgrep /' . expand('<cword>') . '/j ' . grep_files <Bar> cwindow<CR>
+
 map <silent> <Leader>h1 :call matchaddpos('Manual1', [line('.')])<CR>
 map <silent> <Leader>h2 :call matchaddpos('Manual2', [line('.')])<CR>
 map <silent> <Leader>hh :call matchaddpos('Manual1', [line('.')])<CR>
