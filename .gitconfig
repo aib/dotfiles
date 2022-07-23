@@ -33,6 +33,7 @@
 	status-all = status --untracked-files=all --ignored
 	clean-all = clean -dx
 	ls-untracked = ls-files -o --exclude-standard
+	change-commits = "!f() { VAR=\"$1\"; OLD=\"$2\"; NEW=\"$3\"; shift 3; FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --env-filter \"if [ \\\"\\$$(echo $VAR)\\\" = '$OLD' ]; then export $VAR='$NEW'; fi\" $@; }; f"
 
 [sendemail]
 	smtpencryption = tls
