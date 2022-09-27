@@ -1,0 +1,18 @@
+#!/bin/bash
+
+ARGS_FILE=/tmp/args
+
+printf "%q" "$0" >${ARGS_FILE}
+for arg in "$@"
+do
+	printf " %q" "$arg" >>${ARGS_FILE}
+done
+printf "\n" >>${ARGS_FILE}
+
+let n=0
+printf "%d: %q\n" "$n" "$0" >>${ARGS_FILE}
+for arg in "$@"
+do
+	let n=n+1
+	printf "%d: %s\n" "$n" "$arg" >>${ARGS_FILE}
+done
