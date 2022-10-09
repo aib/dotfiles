@@ -19,6 +19,12 @@ set smartcase
 " Scroll to current search matches
 set incsearch
 
+" Turn hlsearch on while searching
+if has('autocmd')
+	autocmd CmdlineEnter /,\? let tmp_hlsearch = &hlsearch | set hlsearch
+	autocmd CmdlineLeave /,\? let &hlsearch = tmp_hlsearch | unlet tmp_hlsearch
+endif
+
 " Show matching brackets
 set showmatch
 " ...for a brief moment
