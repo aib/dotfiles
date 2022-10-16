@@ -9,6 +9,7 @@ alias sudo='sudo '
 
 #default option aliases
 alias ls='ls --color=auto -F'
+alias ll='ls --block-size="'\''1" -l'
 alias grep='grep --color=auto'
 alias ip='ip --color=auto'
 alias xxd='xxd -g 1'
