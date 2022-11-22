@@ -7,6 +7,8 @@
 [push]
 	default = simple
 	followTags = true
+[pull]
+	ff = only
 [rebase]
 	autoSquash = true
 
