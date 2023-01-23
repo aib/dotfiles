@@ -38,6 +38,7 @@ set shiftwidth=4
 set autoindent
 set smartindent
 set copyindent
+set indentkeys=0{,0},0),0],:,!^F,o,O,e
 
 " No octal with ^A/^X
 set nrformats-=octal
