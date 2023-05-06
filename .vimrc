@@ -74,6 +74,7 @@ set conceallevel=2
 nnoremap <F2> :make!<CR>
 " Shift-F2 to execute the current file
 nnoremap <S-F2> :!%:p<CR>
+nnoremap [1;2Q :!%:p<CR>
 
 nnoremap <F3> :!git gui<CR>
 
