@@ -31,8 +31,8 @@ unsetopt notify
 
 ## History ##
 HISTFILE=~/.histfile
-HISTSIZE=65536
-SAVEHIST=65536
+HISTSIZE=1048576
+SAVEHIST=1048576
 
 setopt extendedhistory
 setopt histignoredups
