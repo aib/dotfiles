@@ -93,7 +93,6 @@ if has('user_commands')
 		command -nargs=+ -complete=shellcmd R :let @" = system("<args>")
 		command -nargs=+ -complete=shellcmd Y :let @" = substitute(system("<args>"), "\n$", "", "")
 	endif
-
 	command -range=% StripTS let tmp_view = winsaveview() | keeppatterns <line1>,<line2>s/\s*$// | call winrestview(tmp_view) | unlet tmp_view
 endif
 
@@ -101,8 +100,12 @@ endif
 map <Leader>e :execute getline(".")<CR>
 "map <Leader>x :let @* = system(getline("."))<CR>
 
-let grep_files = '**'
-map <leader>gw :execute 'vimgrep /' . expand('<cword>') . '/j ' . grep_files <Bar> cwindow<CR>
+if has('eval')
+	let grep_files = '**'
+	map <leader>gw :execute 'vimgrep /' . expand('<cword>') . '/j ' . grep_files <Bar> cwindow<CR>
+else
+	map <leader>gw :execute 'vimgrep /' . expand('<cword>') . '/j ' . ** <Bar> cwindow<CR>
+endif
 
 map <silent> <Leader>h1 :call matchaddpos('Manual1', [line('.')])<CR>
 map <silent> <Leader>h2 :call matchaddpos('Manual2', [line('.')])<CR>
