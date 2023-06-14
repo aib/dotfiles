@@ -24,6 +24,7 @@ alias nsa='netstat -pan46'
 alias psl='ps -Heo pid,pgrp,user,%cpu,%mem,pri,cls,ni,nlwp,tty,stat,start_time,bsdtime,cmd'
 alias pslg='psl | grep'
 alias xclip='xclip -selection clipboard'
+alias xsel='xsel --clipboard'
 
 SSHU_OPTS='-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 alias sshu="ssh $SSHU_OPTS"
