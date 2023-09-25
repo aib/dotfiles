@@ -43,11 +43,6 @@ set indentkeys=0{,0},0),0],:,!^F,o,O,e
 " No octal with ^A/^X
 set nrformats-=octal
 
-if has('autocmd')
-	" Do not auto-wrap comments, do not continue on next line (WTF?!)
-	autocmd BufEnter * setlocal formatoptions-=cro
-endif
-
 " Enable mouse
 if has('mouse')
 	set mouse=a
@@ -63,6 +58,33 @@ vnoremap <C-c> "+y
 " Enable syntax highlighting
 if has('syntax')
 	syntax on
+endif
+
+if has('eval')
+	function VimrcAutos()
+		" Do not auto-wrap comments, do not continue on next line (WTF?!)
+		setlocal formatoptions-=cro
+
+		if has('syntax')
+			syntax match genTrailingWhitespace /\s\+\%#\@!$/ containedin=ALL
+			highlight genTrailingWhitespace term=standout ctermbg=darkred guibg=red
+
+			syntax match genSpaceBeforeTab /^ \+\ze\t/ containedin=ALL
+			highlight genSpaceBeforeTab term=standout ctermbg=darkred guibg=red
+
+			syntax match genNonAscii /[^\t\x20-\x7e]/ containedin=ALL
+			highlight genNonAscii term=standout ctermbg=darkblue guibg=blue
+
+			highlight Manual1 term=standout ctermbg=blue guibg=lightblue
+			highlight Manual2 term=standout ctermbg=yellow guibg=yellow
+		endif
+	endfunction
+
+	if has('autocmd')
+		autocmd BufEnter * call VimrcAutos()
+	else
+		call VimrcAutos()
+	endif
 endif
 
 " Set conceal for text with a replacement char
@@ -111,21 +133,6 @@ map <silent> <Leader>h1 :call matchaddpos('Manual1', [line('.')])<CR>
 map <silent> <Leader>h2 :call matchaddpos('Manual2', [line('.')])<CR>
 map <silent> <Leader>hh :call matchaddpos('Manual1', [line('.')])<CR>
 map <silent> <Leader>hc :call clearmatches()<CR>
-
-" Highlights
-if has('autocmd') && has('syntax')
-	autocmd BufEnter * syntax match genTrailingWhitespace /\s\+\%#\@!$/ containedin=ALL
-	highlight genTrailingWhitespace term=standout ctermbg=darkred guibg=red
-
-	autocmd BufEnter * syntax match genSpaceBeforeTab /^ \+\ze\t/ containedin=ALL
-	highlight genSpaceBeforeTab term=standout ctermbg=darkred guibg=red
-
-	autocmd BufEnter * syntax match genNonAscii /[^\t\x20-\x7e]/ containedin=ALL
-	highlight genNonAscii term=standout ctermbg=darkblue guibg=blue
-
-	highlight Manual1 term=standout ctermbg=blue guibg=lightblue
-	highlight Manual2 term=standout ctermbg=yellow guibg=yellow
-endif
 
 " vim-plugged
 silent! if plug#begin('~/.vim/plugged')
