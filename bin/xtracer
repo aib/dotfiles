@@ -1,0 +1,28 @@
+#!/bin/bash
+
+XTRACER_COMMAND="${XTRACER_COMMAND:-echo}"
+#XTRACER_PRE_ARGS=""
+#XTRACER_POST_ARGS=""
+XTRACER_OUTPUT_PREFIX="${XTRACER_OUTPUT_PREFIX:-/tmp/xtracer_}"
+
+out_run="${XTRACER_OUTPUT_PREFIX}$$.run"
+out_stdout="${XTRACER_OUTPUT_PREFIX}$$.out"
+out_stderr="${XTRACER_OUTPUT_PREFIX}$$.err"
+
+args=(${XTRACER_PRE_ARGS} "$@" ${XTRACER_POST_ARGS})
+
+date >>${out_run}
+echo >>${out_run}
+
+let n=0
+printf "%d: %q\n" "$n" "${XTRACER_COMMAND}" >>${out_run}
+for arg in "${args[@]}"
+do
+	let n=n+1
+	printf "%d: %q\n" "$n" "$arg" >>${out_run}
+done
+
+echo >>${out_run}
+printenv >>${out_run}
+
+exec "${XTRACER_COMMAND}" "${args[@]}" 1>${out_stdout} 2>${out_stderr}
