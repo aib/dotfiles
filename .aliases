@@ -92,6 +92,9 @@ findfile() {
 # Create/activate virtualenv
 venv() {
 	local venv_dir="${1-./venv}"
-	[ -e "$venv_dir" ] || virtualenv "$venv_dir"
+	[ -e "$venv_dir" ] || (
+		(python3 -m virtualenv --version && python3 -m virtualenv "$venv_dir") \
+			|| python3 -m venv "$venv_dir"
+	)
 	. "$venv_dir"/bin/activate
 }
