@@ -46,6 +46,8 @@ alias tsd='date "+%Y%m%d"'
 alias tsdt='date "+%Y%m%d%H%M%S"'
 alias tsms='ts "%Y-%m-%d %H:%M:%.S"'
 
+alias clean-merge='find . \( -name "*.orig" -o -name "*_BACKUP_*" -o -name "*_BASE_*" -o -name "*_LOCAL_*" -o -name "*_REMOTE_*" \) -delete'
+
 #Set terminal window title
 xtitle() {
 	echo -en "\e]0;$@\a"
