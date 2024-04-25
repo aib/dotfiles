@@ -86,7 +86,7 @@ showcerts() {
 }
 
 findext() {
-	find . -name "*.$1"
+	find . -iname "*.$1"
 }
 findfile() {
 	find . -iname "*$1*"
