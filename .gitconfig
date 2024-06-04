@@ -11,9 +11,15 @@
 	ff = only
 [rebase]
 	autoSquash = true
+	missingCommitsCheck = warn
+
+[mergetool]
+	keepBackup = false
 
 [diff]
 	wsErrorHighlight = old,new
+[log]
+	date = iso
 
 [color]
 	ui = auto
