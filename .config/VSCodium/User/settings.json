@@ -1,0 +1,37 @@
+{
+	// Sanity
+	"editor.insertSpaces": false,
+	"editor.tabSize": 4,
+	"files.eol": "\n",
+
+	// Usability
+	"workbench.editor.openPositioning": "last",
+
+	// Automatic bullshit
+	"editor.autoClosingBrackets": "never",
+	"editor.autoClosingComments": "never",
+	"editor.autoClosingDelete": "never",
+	"editor.autoClosingQuotes": "never",
+	"editor.autoSurround": "never",
+
+	"editor.acceptSuggestionOnCommitCharacter": false,
+	"editor.inlineSuggest.enabled": false,
+	"editor.quickSuggestions": {
+		"comments": "off",
+		"strings": "off",
+		"other": "off"
+	},
+	"editor.suggestOnTriggerCharacters": false,
+	"editor.parameterHints.enabled": false,
+
+	// Useless clutter
+	"editor.guides.indentation": false,
+	"editor.codeLens": false,
+	"workbench.editor.enablePreview": false,
+
+	// Unnecessary features
+	"git.openRepositoryInParentFolders": "never",
+
+	// Uncommitted
+	"misc.onlyHereSoUncommittedChangesGoBelow": null,
+}
