@@ -49,6 +49,8 @@ alias tsms='ts "%Y-%m-%d %H:%M:%.S"'
 
 alias clean-merge-files='find . \( -name "*.orig" -o -name "*_BACKUP_*" -o -name "*_BASE_*" -o -name "*_LOCAL_*" -o -name "*_REMOTE_*" \) -delete'
 
+alias dotnice='dot -Gdpi=120 -Gpad=.25 -Gfontname=Sans -Nfontname=Sans -Efontname=Sans'
+
 #Set terminal window title
 xtitle() {
 	echo -en "\e]0;$@\a"
