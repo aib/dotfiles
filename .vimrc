@@ -115,6 +115,8 @@ if has('user_commands')
 		command -nargs=+ -complete=shellcmd R :let @" = system("<args>")
 		command -nargs=+ -complete=shellcmd Y :let @" = substitute(system("<args>"), "\n$", "", "")
 	endif
+
+	command -range=% StripCR let tmp_view = winsaveview() | keeppatterns <line1>,<line2>s/\r$// | call winrestview(tmp_view) | unlet tmp_view
 	command -range=% StripTS let tmp_view = winsaveview() | keeppatterns <line1>,<line2>s/\s*$// | call winrestview(tmp_view) | unlet tmp_view
 	command -range=% Tab4S let tmp_view = winsaveview() | keeppatterns <line1>,<line2>s/    /\t/g | call winrestview(tmp_view) | unlet tmp_view
 endif
