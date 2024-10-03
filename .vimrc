@@ -119,6 +119,7 @@ if has('user_commands')
 	command -range=% StripCR let tmp_view = winsaveview() | keeppatterns <line1>,<line2>s/\r$// | call winrestview(tmp_view) | unlet tmp_view
 	command -range=% StripTS let tmp_view = winsaveview() | keeppatterns <line1>,<line2>s/\s*$// | call winrestview(tmp_view) | unlet tmp_view
 	command -range=% Tab4S let tmp_view = winsaveview() | keeppatterns <line1>,<line2>s/    /\t/g | call winrestview(tmp_view) | unlet tmp_view
+	command -range=% TabTo4S let tmp_view = winsaveview() | keeppatterns <line1>,<line2>s/\t/    /g | call winrestview(tmp_view) | unlet tmp_view
 endif
 
 " Leader commands
