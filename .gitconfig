@@ -34,10 +34,14 @@
 	pff = pull --ff-only
 	mff = merge --ff-only
 	force-push = push --force-with-lease
-	lg = log --graph --pretty=format:'%C(auto)%h%d%C(reset) %s %C(green)(%ad) %C(blue)<%an> %C(reset)' --date=relative
-	lgd = log --graph --pretty=format:'%C(auto)%h%d%C(reset) %s %C(green)(%ad) %C(blue)(%ad) <%an> %C(reset)' --date=relative
-	lga = log --graph --all --pretty=format:'%C(auto)%h%d%C(reset) %s %C(green)(%ad) %C(blue)<%an> %C(reset)' --date=relative
-	lgad = log --graph --all --pretty=format:'%C(auto)%h%d%C(reset) %s %C(green)(%ad) %C(blue)(%cd) %C(green)<%an> %C(blue)<%cn> %C(reset)' --date=relative
+	lg =   log --clear-decorations --graph --date=relative       \
+		--pretty=format:'%C(auto)%h%d%C(reset) %s %C(green)(%ad) %C(blue)<%an> %C(reset)'
+	lgd =  log --clear-decorations --graph --date=relative       \
+		--pretty=format:'%C(auto)%h%d%C(reset) %s %C(green)(%ad) %C(blue)(%cd) %C(green)<%an> %C(blue)<%cn> %C(reset)'
+	lga =  log --clear-decorations --graph --date=relative --all \
+		--pretty=format:'%C(auto)%h%d%C(reset) %s %C(green)(%ad) %C(blue)<%an> %C(reset)'
+	lgad = log --clear-decorations --graph --date=relative --all \
+		--pretty=format:'%C(auto)%h%d%C(reset) %s %C(green)(%ad) %C(blue)(%cd) %C(green)<%an> %C(blue)<%cn> %C(reset)'
 	status-all = status --untracked-files=all --ignored
 	clean-all = clean -dx
 	ls-untracked = ls-files -o --exclude-standard
