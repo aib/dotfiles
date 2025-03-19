@@ -135,6 +135,8 @@ else
 	map <leader>gw :execute 'vimgrep /' . expand('<cword>') . '/j ' . ** <Bar> cwindow<CR>
 endif
 
+map <silent> <Leader>dt :if &diff \| diffoff \| else \| diffthis \| endif<CR>
+
 map <silent> <Leader>h1 :call matchaddpos('Manual1', [line('.')])<CR>
 map <silent> <Leader>h2 :call matchaddpos('Manual2', [line('.')])<CR>
 map <silent> <Leader>hh :call matchaddpos('Manual1', [line('.')])<CR>
