@@ -83,4 +83,11 @@ path=(~/bin ~/.local/bin $path)
 
 ## Startup ##
 xtitle "$USER@$HOST"
-#fortune -a | cowsay -n -TUU
+
+if [[ -n "$SHELL_INIT" ]]; then
+	eval "$SHELL_INIT"
+	export SHELL_INIT_="$SHELL_INIT"
+	unset SHELL_INIT
+else
+	#fortune -a | cowsay -n -TUU
+fi
