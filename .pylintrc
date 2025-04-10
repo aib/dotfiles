@@ -8,8 +8,6 @@ score=no
 disable=
 	C,
 	R,
-	mixed-indentation, # This is not actual mixed indentation
-	broad-except,
-	redefined-outer-name,
-	redefine-in-handler,
-	unsubscriptable-object,
+
+[FORMAT]
+indent-string=\t
