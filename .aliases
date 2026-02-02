@@ -16,7 +16,7 @@ alias xxd='xxd -g 1'
 
 #command aliases
 alias cgrep='grep --color=always'
-alias dfu='df -Th -x tmpfs -x devtmpfs -x squashfs'
+alias dfu='df -Th -x tmpfs -x devtmpfs -x efivarfs -x squashfs'
 alias sddd='sudo dd bs=4M oflag=direct,sync status=progress'
 alias hl='history -iDd 0'
 alias hlg='hl | grep'
