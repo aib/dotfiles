@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>application-zip</icon>
+	<name>Zip to /tmp</name>
+	<submenu></submenu>
+	<unique-id>1774358018258767-1</unique-id>
+	<command>zip -r /tmp/%n.zip %n</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+</actions>
