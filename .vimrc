@@ -155,3 +155,6 @@ endif
 " Default plugin settings
 silent! let g:netrw_dirhistmax = 0
 silent! let g:python_recommended_style = 0
+
+" Fixes
+autocmd FileType yaml setlocal indentexpr=
