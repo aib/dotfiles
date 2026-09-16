@@ -64,6 +64,11 @@ bindkey '^X^E' edit-command-line
 # Shift-enter same as enter
 bindkey '^[OM' accept-line
 
+# Basics
+# Home / End
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
+
 
 #prompt
 export PS1C='%B%F{black}%D{%H:%M:%S}%f%b %? %B%F{red}%n%f%b@%B%F{green}%m%f%b:%B%F{blue}%~%f%b%# '
