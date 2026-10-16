@@ -23,6 +23,7 @@
 
 [diff]
 	wsErrorHighlight = old,new
+	tool = vimdiff
 [log]
 	date = iso
 
