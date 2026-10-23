@@ -51,6 +51,10 @@ alias clean-merge-files='find . \( -name "*.orig" -o -name "*_BACKUP_*" -o -name
 
 alias dotnice='dot -Gdpi=120 -Gpad=.25 -Gfontname=Sans -Nfontname=Sans -Efontname=Sans'
 
+# Lines to columns
+line2col()  { awk '{ gsub(/^\s+|\s+$/, ""); printf("%s%s", $0, (NR % '"$1"' ? "\t" : "\n")) }' "${@:2}" }
+line2cols() { awk                        '{ printf("%s%s", $0, (NR % '"$1"' ? "\t" : "\n")) }' "${@:2}" }
+
 #Set terminal window title
 xtitle() {
 	echo -en "\e]0;$@\a"
